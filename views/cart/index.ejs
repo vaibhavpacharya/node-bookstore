@@ -1,0 +1,95 @@
+<% include ../partials/header %>
+
+<div class="container">
+<div class="jumbotron page-start">
+  <div class="container">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/books">Home</a></li>
+      <li class="breadcrumb-item active">Shopping Cart</li>
+    </ul>
+    <div class="row page-top">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h1>Shopping Cart</h1>
+        <p class="text-muted">You currently have <%=(cart.items).length%> item(s) in your cart.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-6 col-sm-3">
+      <section id="shopping-cart">
+        <div class="box">
+        <table>
+          <thead>
+            <tr class="row-heading">
+              <th width="500">Product</th>
+              <th width="100">Quantity</th>
+              <th width="100">Unit Price</th>
+              <th width="100">Discount</th>
+              <th width="100">Total</th>
+            </tr>
+            </thead>
+              <tbody>
+                <% for(i=0; i < (cart.items).length; i++){ %>
+                <tr class="ux-card">
+                  <!-- Item name -->
+                  <td><a href="/books/<%= cart.items[i].item %>"><%= cart.items[i].item %></a></td>
+                  <!-- Quantity -->
+                  <td><%= cart.items[i].qty %></td>
+                  <!-- Price -->
+                  <td><%= cart.items[i].price %></td>
+                  <!-- Discount -->
+                  <td>$0.00</td>
+                  <!-- Total -->
+                  <td><%= total %></td>
+                  <!-- Delete -->
+                  <td><i class="fa fa-trash-o"></i></td>
+                </tr>
+              <% }; %>
+              </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    </section>
+
+      <div class="row last-line">
+          <div class="col-sm-6">
+            <button class="btn btn-lg">
+              Buy now for
+              <span class="btn-license-price">$<%= total %></strong></span>
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+              <!-- Identify your business so that you can collect the payments. -->
+              <input type="hidden" name="business" value="vaibhav.ach@gmail.com">
+
+              <!-- Specify a Buy Now button. -->
+              <input type="hidden" name="cmd" value="_xclick">
+
+              <!-- Specify details about the item that buyers will purchase. -->
+              <input type="hidden" name="item_name" value="Books">
+              <input type="hidden" name="amount" value="<%= total %>">
+              <input type="hidden" name="currency_code" value="USD">
+
+              <!-- Prompt buyers to enter the quantities they want. -->
+              <input type="hidden" name="undefined_quantity" value="1">
+
+              <!-- Display the payment button. -->
+              <input type="image" name="submit" border="0"
+                src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png"
+                alt="Checkout with PayPal ">
+              <img alt="" border="0" width="1" height="1"
+                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+            </form>
+        </div><!-- end column-sm-6 -->
+      </div><!-- end row -->
+  </div>
+</div>
+
+
+<% include ../partials/footer %>
