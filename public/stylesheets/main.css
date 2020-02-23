@@ -1,10 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
 body{
-  font-family: 'Raleway', sans-serif;
+  font-family: Muli, sans-serif;
   top: 0;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  color: #eee;
+  background: 0 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.center_links {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  list-style: none;
 }
 
 .cart-title{
@@ -245,6 +274,22 @@ tr + tr > th { border-top: 1px solid indigo; }
 h2 span {
   font-size: 18px;
 }
+
+nav {
+  padding: 40px;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  background: none;
+  color: black;
+}
+
+.navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #c50000;
+  border-bottom: 1px solid #c50000;
+  background: none;
+}
+
 .navbar {
   z-index: 1;
   margin-bottom: 0px;
@@ -258,9 +303,7 @@ h2 span {
 
 .navbar-default{
   background-color: #eee;
-  border-color: #9ACD32;
-  border-bottom: 5px solid #080808;
-  padding: 0;
+  padding: 40px;
   border-radius: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -268,12 +311,31 @@ h2 span {
 
 .navbar-default .navbar-brand{
   font-size: 2rem;
-  color: #555;
+  color: black;
+}
+
+a.navbar-brand{
+  font-weight: bolder;
+  font-family: 'Montserrat',;
+  text-transform: uppercase
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #555;
-    font-size: 1.2em;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    background: none;
+    color: black;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    font-family: Muli,sans-serif;
+    transition-duration: 0.3s;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #c50000;
+  border-bottom: 1px solid #c50000;
 }
 
 .fa{
@@ -285,13 +347,9 @@ color: #4fbfa8;
 }
 
 .book-index{
-    background: url(https://source.unsplash.com/3shfnfzdFVc);
-    background-position: center;
-    background-size: cover;
     margin-bottom: 0;
     height: 20%;
     text-align: center;
-    color: white;
     margin-bottom: 30px;
     width: 100%;
 		position: relative;
@@ -300,13 +358,38 @@ color: #4fbfa8;
 }
 
 .book-index div {
-    margin-top: 15%;
-    margin-bottom: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     padding-top: 5%;
     padding-bottom: 5%;
-    background: rgba(0, 128, 0, .6);
+    /* background: rgba(0, 128, 0, .6); */
+}
+
+.book-index h1 {
+  color: black;
+}
+
+.book-index p {
+  color: #c50000;
 }
 
 p a{
   margin: 0 0 10px;
+}
+
+.web-single-img{
+  text-align: center;
+}
+
+.wrapper-fig{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  max-width: 100%;
+}
+
+.single-image-wrapper{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
 }

@@ -2,30 +2,36 @@
 
 <div class="slideshow"></div>
 <header class="jumbotron book-index">
-  <div class ="container">
+  <div class="container">
     <h1>Welcome to the Book Store!</h1>
     <p>View our list of books from all over the world!</p>
-    <p>
+    <div class="container web-single-img">
+      <figure class="wrapper-fig">
+        <div class="single-image-wrapper">
+          <img width="297" height="192"
+            src="https://wpbingosite.com/wordpress/bootin/wp-content/uploads/2019/04/banner3-2.jpg">
+        </div>
+      </figure>
+    </div>
     <a class="btn-lg btn-success" href="/books/new">Add a new book</a>
-    </p>
   </div>
 </header>
 
 <div class="container">
   <div class="row text-center flex">
-      <% books.forEach(function(book){ %>
-        <div class="col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img id="index_img" src= "<%= book.image %>">
-            <div class="caption">
-              <h4><%= book.name %></h4>
-            </div>
-            <a class="btn-lg btn-primary" href="/books/<%= book._id %>">More Info</a>
-            <p></p>
-          </div>
+    <% books.forEach(function(book){ %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img id="index_img" src="<%= book.image %>">
+        <div class="caption">
+          <h4><%= book.name %></h4>
         </div>
-      <% }); %>
-  </div>  
+        <a class="btn-lg btn-primary" href="/books/<%= book._id %>">More Info</a>
+        <p></p>
+      </div>
+    </div>
+    <% }); %>
+  </div>
 </div>
 
 <% include ../partials/footer %>
