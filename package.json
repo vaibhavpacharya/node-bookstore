@@ -20,7 +20,7 @@
     "ejs": "^2.7.4",
     "method-override": "^2.3.10",
     "mongoose": "^5.9.25",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.5.0",
     "snyk": "^1.425.4"
