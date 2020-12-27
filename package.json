@@ -12,7 +12,7 @@
   "author": "Vaibhav Acharya",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "dotenv": "^4.0.0",
     "express-session": "^1.17.1",
