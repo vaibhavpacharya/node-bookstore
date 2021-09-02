@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "ejs": "^2.7.4",
     "method-override": "^2.3.10",
-    "mongoose": "^5.9.25",
+    "mongoose": "^6.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.5.0",
